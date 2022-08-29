@@ -6,6 +6,11 @@
     mov edx, %2 ;len
     int 0x80
   %endmacro
+  
+  %macro e 0 ;e for end
+    cmp eax, 'e'
+    jn out
+  %endmacro
    
   %macro exit 0
     mov eax, 1
@@ -28,6 +33,8 @@ segment .data
   
   en2 db 'y = ?'
   lene2 equ $-en2
+  
+  lenres equ $-res
   
 section .text
   global _start
@@ -57,6 +64,10 @@ _start:
   je L0
   cmp uinp, "subtract"
   je L1
+  cmp uinp, "multiply"
+  je L2
+  cmp uinp, "divide"
+  je L3
   
     L0:
   mov eax, [x]
@@ -66,6 +77,7 @@ _start:
 
   add eax, ebx
   add eax, '0'
+  e
   
     L1:
   mov eax, [x]
@@ -75,15 +87,31 @@ _start:
   
   sub eax, ebx
   add eax, '0'
+  e
   
     L2:
+  mov eax, [x]
+  sub eax, '0'
+  mov ebx, [y]
+  sub ebx, '0'
   
-
-
-
-  cmp eax, "q"
-  jn out
+  mul eax, ebx
+  add eax, '0'
+  e
+  
+    L3:
+  mov eax, [x]
+  sub eax, '0'
+  mov ebx, [y]
+  sub ebx, '0'
+  
+  div eax, ebx
+  add eax, '0'
+  e
   
     out:
   mov [res], eax
-  print res, $-res
+  print res, lenres
+
+exit:
+  exit
