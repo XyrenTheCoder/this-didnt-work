@@ -45,3 +45,10 @@ L0:
   mov ecx, x
   mov edx, 10
   int 0x80
+
+  print en2, lene2
+  mov eax, 3
+  mov ebx, 0
+  mov ecx, y
+  mov edx, 10
+  int 0x80
