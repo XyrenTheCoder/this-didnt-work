@@ -44,7 +44,7 @@ _start:
   cmp ecx, "div"
   je L3
   
-    L0:
+L0:
   xor ecx, ecx
   print en1, lene1
   mov eax, 3
@@ -69,7 +69,7 @@ _start:
   add eax, '0'
   int 80h
   
-    L1:
+L1:
   xor ecx, ecx
   print en1, lene1
   mov eax, 3
@@ -94,7 +94,7 @@ _start:
   add eax, '0'
   int 80h
   
-    L2:
+L2:
   xor ecx, ecx
   print en1, lene1
   mov eax, 3
@@ -119,7 +119,7 @@ _start:
   add eax, '0'
   int 80h
   
-    L3:
+L3:
   xor ecx, ecx
   print en1, lene1
   mov eax, 3
