@@ -31,4 +31,4 @@ section .text
   
 _start:
   print out1, len1
-  input
+  input uinp
