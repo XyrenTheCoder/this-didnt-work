@@ -112,7 +112,7 @@ _start:
   mov ebx, [y]
   sub ebx, '0'
   
-  mul eax, ebx
+  mul ebx
   add eax, '0'
   
   
@@ -136,7 +136,7 @@ _start:
   mov ebx, [y]
   sub ebx, '0'
   
-  div eax, ebx
+  div ebx
   add eax, '0'
   
 out:
