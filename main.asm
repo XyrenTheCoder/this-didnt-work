@@ -35,13 +35,13 @@ _start:
   mov edx, 10
   int 0x80
   
-  cmp uinp, "sum"
+  cmp ecx, "sum"
   je L0
-  cmp uinp, "sub"
+  cmp ecx, "sub"
   je L1
-  cmp uinp, "mul"
+  cmp ecx, "mul"
   je L2
-  cmp uinp, "div"
+  cmp ecx, "div"
   je L3
   
     L0:
