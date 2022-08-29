@@ -64,10 +64,10 @@ _start:
   sub eax, '0'
   mov ebx, [y]
   sub ebx, '0'
-
+  
   add eax, ebx
   add eax, '0'
-  
+  int 80h
   
     L1:
   xor ecx, ecx
@@ -92,7 +92,7 @@ _start:
   
   sub eax, ebx
   add eax, '0'
-  
+  int 80h
   
     L2:
   xor ecx, ecx
@@ -117,7 +117,7 @@ _start:
   
   mul ebx
   add eax, '0'
-  
+  int 80h
   
     L3:
   xor ecx, ecx
@@ -142,6 +142,7 @@ _start:
   
   div ebx
   add eax, '0'
+  int 80h
   
 out:
   mov [res], eax
