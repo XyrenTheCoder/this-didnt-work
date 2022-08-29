@@ -6,14 +6,6 @@
     mov edx, %2 ;len
     int 0x80
   %endmacro
-  
-  %macro input1 1
-    mov eax, 3
-    mov ebx, 0
-    mov ecx, %1 ;input
-    mov edx, 10 ;as max len
-    int 0x80
-  %endmacro
    
   %macro exit 0
     mov eax, 1
@@ -22,8 +14,8 @@
   
 segmemt .bss
   uinp resb 10 ;as string
-  num1 resb 10
-  num2 resb 10
+  x resb 10
+  y resb 10
   res resb 1 
   
 section .data
@@ -48,4 +40,8 @@ _start:
 
 L0:
   print en1, lene1
-  
+  mov eax, 3
+  mov ebx, 0
+  mov ecx, x
+  mov edx, 10
+  int 0x80
