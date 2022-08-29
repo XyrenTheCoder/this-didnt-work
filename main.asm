@@ -9,7 +9,7 @@
   
   %macro input1 1
     mov eax, 3
-    mov ebx, 2
+    mov ebx, 0
     mov ecx, %1 ;input
     mov edx, 10 ;as max len
     int 0x80
@@ -20,8 +20,11 @@
     int 0x80
   %endmacro
   
-section .bss
+segmemt .bss
   uinp resb 10 ;as string
+  num1 resb 10
+  num2 resb 10
+  res resb 1 
   
 section .data
   out1 db 'input function:'
