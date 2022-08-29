@@ -45,6 +45,7 @@ _start:
   je L3
   
     L0:
+  xor ecx, ecx
   print en1, lene1
   mov eax, 3
   mov ebx, 0
@@ -69,6 +70,7 @@ _start:
   
   
     L1:
+  xor ecx, ecx
   print en1, lene1
   mov eax, 3
   mov ebx, 0
@@ -93,6 +95,7 @@ _start:
   
   
     L2:
+  xor ecx, ecx
   print en1, lene1
   mov eax, 3
   mov ebx, 0
@@ -117,6 +120,7 @@ _start:
   
   
     L3:
+  xor ecx, ecx
   print en1, lene1
   mov eax, 3
   mov ebx, 0
