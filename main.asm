@@ -34,7 +34,7 @@ _start:
   mov ecx, uinp ;test: sum, substract, multiply, divide
   mov edx, 10
   int 0x80
-
+  
   print en1, lene1
   mov eax, 3
   mov ebx, 0
