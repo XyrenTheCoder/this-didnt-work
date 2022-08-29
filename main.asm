@@ -11,7 +11,7 @@
     mov eax, 3
     mov ebx, 2
     mov ecx, %1 ;input
-    mov edx, 10 ;as mac len
+    mov edx, 10 ;as max len
     int 0x80
   %endmacro
    
