@@ -103,7 +103,7 @@ comp:
   
     out:
   mov [res], eax
-  print res,  ;require fix
+  print res, 10
 
 exit:
   mov eax, 1
