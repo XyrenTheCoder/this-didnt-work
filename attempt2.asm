@@ -15,7 +15,10 @@ section .data
   len3 equ $- msg3
   
 section .bss
-
+  num1 resb 2 
+  num2 resb 2 
+  res resb 1 
+  
 section .text
   global _start
   
