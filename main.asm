@@ -19,6 +19,9 @@
     int 0x80
   %endmacro
   
+section .bss
+  uinp resb 7
+  
 section .data
   out1 db 'input function:'
   len1 equ $-out1
@@ -28,3 +31,4 @@ section .text
   
 _start:
   print out1, len1
+  input
