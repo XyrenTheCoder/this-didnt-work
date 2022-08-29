@@ -14,22 +14,6 @@
     mov edx, 10 ;as mac len
     int 0x80
   %endmacro
-  
-  %macro x 1
-    mov eax, 3
-    mov ebx, 0
-    mov ch, %1
-    mov edx, 10
-    int 0x80
-  %endmacro
-  
-  %macro y 1
-    mov eax, 3
-    mov ebx, 3
-    mov cl, %1
-    mov edx, 10
-    int 0x80
-  %endmacro
    
   %macro exit 0
     mov eax, 1
