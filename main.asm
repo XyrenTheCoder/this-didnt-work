@@ -20,7 +20,7 @@
   %endmacro
   
 section .bss
-  uinp resb 7
+  uinp resb 10
   
 section .data
   out1 db 'input function:'
@@ -31,4 +31,4 @@ section .text
   
 _start:
   print out1, len1
-  input uinp
+  input uinp ;test: sum, substract, multiply, divide
