@@ -52,3 +52,14 @@ L0:
   mov ecx, y
   mov edx, 10
   int 0x80
+
+  mov eax, [x]
+   sub eax, '0'
+	
+   mov ebx, [y]
+   sub ebx, '0'
+
+   add eax, ebx
+   add eax, '0'
+
+   mov [res], eax
