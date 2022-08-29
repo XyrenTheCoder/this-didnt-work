@@ -53,6 +53,25 @@ _start:
   mov edx, len3         
   int 0x80
   
+  mov eax, [num1]
+  sub eax, '0'
+	
+  mov ebx, [num2]
+  sub ebx, '0'
+
+  add eax, ebx
+  add eax, '0'
+
+   ; storing the sum in memory location res
+  mov [res], eax
+
+   ; print the sum 
+  mov eax, SYS_WRITE        
+  mov ebx, STDOUT
+  mov ecx, res         
+  mov edx, 1        
+  int 0x80
+  
 exit:
   mov eax, SYS_EXIT   
   xor ebx, ebx 
