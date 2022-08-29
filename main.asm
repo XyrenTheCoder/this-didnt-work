@@ -34,11 +34,11 @@ section .text
   
 _start:
   print out1, len1
-  input1 uinp ;test: sum, substract, multiply, divide
-  cmp ecx, 'sum'
-  je L0
+  mov eax, 3
+  mov ebx, 0
+  mov ecx, uinp ;test: sum, substract, multiply, divide
+  mov edx, 10
 
-L0:
   print en1, lene1
   mov eax, 3
   mov ebx, 0
@@ -53,13 +53,37 @@ L0:
   mov edx, 10
   int 0x80
 
+  cmp uinp, "sum"
+  je L0
+  cmp uinp, "subtract"
+  je L1
+  
+    L0:
   mov eax, [x]
-   sub eax, '0'
-	
-   mov ebx, [y]
-   sub ebx, '0'
+  sub eax, '0'
+  mov ebx, [y]
+  sub ebx, '0'
 
-   add eax, ebx
-   add eax, '0'
+  add eax, ebx
+  add eax, '0'
+  
+    L1:
+  mov eax, [x]
+  sub eax, '0'
+  mov ebx, [y]
+  sub ebx, '0'
+  
+  sub eax, ebx
+  add eax, '0'
+  
+    L2:
+  
 
-   mov [res], eax
+
+
+  cmp eax, "q"
+  jn out
+  
+    out:
+  mov [res], eax
+  print res, $-res
