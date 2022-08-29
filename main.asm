@@ -35,6 +35,16 @@ _start:
   mov edx, 10
   int 0x80
   
+  cmp uinp, "sum"
+  je L0
+  cmp uinp, "sub"
+  je L1
+  cmp uinp, "mul"
+  je L2
+  cmp uinp, "div"
+  je L3
+  
+    L0:
   print en1, lene1
   mov eax, 3
   mov ebx, 0
@@ -49,16 +59,6 @@ _start:
   mov edx, 10
   int 0x80
 
-  cmp uinp, "sum"
-  je L0
-  cmp uinp, "sub"
-  je L1
-  cmp uinp, "mul"
-  je L2
-  cmp uinp, "div"
-  je L3
-  
-    L0:
   mov eax, [x]
   sub eax, '0'
   mov ebx, [y]
@@ -69,6 +69,20 @@ _start:
   
   
     L1:
+  print en1, lene1
+  mov eax, 3
+  mov ebx, 0
+  mov ecx, x
+  mov edx, 10
+  int 0x80
+
+  print en2, lene2
+  mov eax, 3
+  mov ebx, 0
+  mov ecx, y
+  mov edx, 10
+  int 0x80
+
   mov eax, [x]
   sub eax, '0'
   mov ebx, [y]
@@ -79,6 +93,20 @@ _start:
   
   
     L2:
+  print en1, lene1
+  mov eax, 3
+  mov ebx, 0
+  mov ecx, x
+  mov edx, 10
+  int 0x80
+
+  print en2, lene2
+  mov eax, 3
+  mov ebx, 0
+  mov ecx, y
+  mov edx, 10
+  int 0x80
+
   mov eax, [x]
   sub eax, '0'
   mov ebx, [y]
@@ -89,6 +117,20 @@ _start:
   
   
     L3:
+  print en1, lene1
+  mov eax, 3
+  mov ebx, 0
+  mov ecx, x
+  mov edx, 10
+  int 0x80
+
+  print en2, lene2
+  mov eax, 3
+  mov ebx, 0
+  mov ecx, y
+  mov edx, 10
+  int 0x80
+
   mov eax, [x]
   sub eax, '0'
   mov ebx, [y]
@@ -97,11 +139,7 @@ _start:
   div eax, ebx
   add eax, '0'
   
-comp:
-  cmp eax, 'q'
-  jn out
-  
-    out:
+out:
   mov [res], eax
   print res, 10
 
