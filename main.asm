@@ -7,13 +7,21 @@
     int 0x80
   %endmacro
   
+  %macro input 1
+    mov eax, 3
+    mov ebx, 2
+    mov ecx, %1
+    mov edx, 5
+    int 0x80
+   
   %macro exit 0
     mov eax, 1
     int 0x80
   %endmacro
   
 section .data
-
+  out1 db 'input function:'
+  len1 equ $-out1
 section .text
   global _start
   
