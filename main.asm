@@ -69,6 +69,8 @@ L0:
   add eax, '0'
   int 80h
   
+  jmp out
+  
 L1:
   xor ecx, ecx
   print en1, lene1
@@ -93,6 +95,8 @@ L1:
   sub eax, ebx
   add eax, '0'
   int 80h
+  
+  jmp out
   
 L2:
   xor ecx, ecx
@@ -119,6 +123,8 @@ L2:
   add eax, '0'
   int 80h
   
+  jmp out
+  
 L3:
   xor ecx, ecx
   print en1, lene1
@@ -143,6 +149,8 @@ L3:
   div ebx
   add eax, '0'
   int 80h
+  
+  jmp out
   
 out:
   mov [res], eax
